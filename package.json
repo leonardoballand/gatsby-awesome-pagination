@@ -29,6 +29,7 @@
   "author": "Callum Macdonald",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-add-module-exports": "^0.2.1",
