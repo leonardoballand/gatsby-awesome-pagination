@@ -116,7 +116,7 @@ export const createPagePerItem = (opts: CreatePagePerItemOpts): void => {
     const item = items[index];
     const path = getPath(item);
     const id = getId(item);
-    const slug = get(item.node.fields.slug);
+    const slug = item.node.fields.slug;
 
     // NOTE: If there is no previous / next item, we set an empty string as the
     // value for the next and previous path and ID. Gatsby ignores context
