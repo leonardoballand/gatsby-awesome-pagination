@@ -116,6 +116,7 @@ export const createPagePerItem = (opts: CreatePagePerItemOpts): void => {
     const item = items[index];
     const path = getPath(item);
     const id = getId(item);
+    const slug = get(item.node.fields.slug);
 
     // NOTE: If there is no previous / next item, we set an empty string as the
     // value for the next and previous path and ID. Gatsby ignores context
@@ -126,8 +127,9 @@ export const createPagePerItem = (opts: CreatePagePerItemOpts): void => {
     const nextPath = getPath(nextItem) || "";
 
     // Does the item have a `context` field?
-    const itemContext = get("context")(item) || {};
-    const context = Object.assign({}, itemContext, {
+    // const itemContext = get("context")(item) || {};
+    const context = Object.assign({}, {
+      slug: slug,
       pageId: id,
       previousPagePath: previousPath,
       previousItem: previousItem,
